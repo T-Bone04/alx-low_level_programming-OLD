@@ -7,31 +7,31 @@
 int main(void)
 {
 	/*
-	 * prints all combination of 3 different digits once,in accending order
-	 * after each combination follows a coma and a space
+	 * all possible combination of 2 2-digits number
+	 * both seperated by space, and coma after
 	 */
 
-	/* take abc as possible digits */
-	int a, b, c;
+	/*declare both numbers*/
+	int a, b;
 
-	/*loop through a,1st digit,lowest of the 3, highest possible is 7*/
-	for (a = 0 ; a <= 7 ; a++)
+	/*loop through highest possible of a=98,with 1 less than b*/
+	for (a = 0 ; a <= 98 ; a++)
 	{
-		/*loop through b,2nd digit,higher than a by 1,highest possible is 8*/
-		for (b = a + 1 ; b <= 8 ; b++)
+		/*loop through highest of b=99,starting with 1 higherthan a*/
+		for (b = a + 1 ; b <= 99 ; b++)
 		{
-			/*loop through c,3rd digit,higher than b by 1,highest possible is 9*/
-			for (c = b + 1 ; c <= 9 ; c++)
-			{
-				putchar((a % 10) + '0');
-				putchar((b % 10) + '0');
-				putchar((c % 10) + '0');
-				/*continues to put coma,space,stop if last highest combination is met*/
-				if (a == 7 && b == 8 && c == 9)
-					continue;
-				putchar(',');
-				putchar(' ');
-			}
+			/*print all two digit value of both numbers*/
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0');
+			putchar(' ');
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
+			/*continue to put coma & space until final combination*/
+			if (a == 98 && b == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');

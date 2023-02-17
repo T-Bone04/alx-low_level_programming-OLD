@@ -3,20 +3,20 @@
 #include <stdio.h>
 /* more headers goes there */
 /**
- * main - generates random numbers,declares + OR -
+ * main - generates random numbers,delcares + OR -
  *
  * Return: 1, if succesful
  */
-int main (void)
+int main(void)
 {
 	int n;
 
-	/* code generates random number*/
+	/*code generates random number*/
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
 	{
-		printf('%d is positive\n", n);
+		printf("%d is positive\n", n);
 	}
 	if (n < 0)
 	{

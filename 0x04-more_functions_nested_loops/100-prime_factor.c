@@ -8,7 +8,8 @@
  */
 int main(void)
 {
-	long pf = 612852475143, div;
+	/*long pf = 612852475143, div;*/
+	long pf = 1231952, div;
 
 	while (div < (pf / 2))
 	{

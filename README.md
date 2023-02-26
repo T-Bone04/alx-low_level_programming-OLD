@@ -4,3 +4,4 @@ ALX LOW LEVEL PROGRAMMING!
 0x02 completed
 0x03 completed
 0x04 completed
+Global user updated

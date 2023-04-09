@@ -1,32 +1,31 @@
+#include <stddef.h>
+
 /**
- * binary_to_uint - converts a binary number to an unsigned int
- * @b: a pointer to a string of 0 and 1 characters representing a binary number
+ * binary_to_uint - Converts a binary number to an unsigned integer
  *
- * Return: the converted unsigned int, or 0 if `b` is NULL
- * or contains non-binary characters
+ * @b: Pointer to a string containing a binary number
+ *
+ * Return: The converted unsigned integer, or 0 if b contains invalid characters
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int result = 0;	/* variable to store the converted unsigned int */
-	int i = 0;	/* counter variable for iterating through the binary string */
+	unsigned int result = 0; /* Initialize result variable to 0 */
+	int index = 0; /* Initialize index variable to 0 */
 
-	/* check for NULL input */
-	if (!b)
-		return (0);
+	if (b == NULL) /* Check if b is NULL */
+		return (0); /* Return 0 if b is NULL */
 
-	/* iterate through the binary string */
-	while (b[i])
+	while (b[index] != '\0') /* Loop through each character in b until the null terminator is reached */
 	{
-		/* check for non-binary characters */
-		if (b[i] != '0' && b[i] != '1')
-			return (0);
+		if (b[index] != '0' && b[index] != '1') /* Check if the current character is not a valid binary digit */
+			return (0); /* Return 0 if the current character is not a valid binary digit */
 
-		/* shift result left and add the current binary digit */
-		result <<= 1;
-		result += b[i] - '0';
+		result <<= 1; /* Shift the current value of result one bit to the left */
+		if (b[index] == '1') /* If the current character is a 1 */
+			result += 1; /* Add 1 to the current value of result */
 
-		i++;	/* increment counter */
+		index++; /* Increment the index variable to move to the next character in b */
 	}
 
-	return (result);	/* return the converted unsigned int */
+	return (result); /* Return the final converted value of result */
 }

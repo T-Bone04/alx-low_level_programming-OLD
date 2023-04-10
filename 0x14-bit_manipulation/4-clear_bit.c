@@ -7,18 +7,18 @@
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-    unsigned long int mask;
+	unsigned long int mask;
 
-    /* Check if index is greater than the number of bits in unsigned long int */
-    if (index >= (sizeof(unsigned long int) * 8))
-        return (-1);
+	/* Check if index is > than the number of bits in unsigned long int */
+	if (index >= (sizeof(unsigned long int) * 8))
+		return (-1);
 
-    /* Create a mask with only the bit at index set to 0 */
-    mask = ~(1UL << index);
+	/* Create a mask with only the bit at index set to 0 */
+	mask = ~(1UL << index);
 
-    /* Use bitwise AND to set the bit at index to 0 */
-    *n &= mask;
+	/* Use bitwise AND to set the bit at index to 0 */
+	*n &= mask;
 
-    return (1);
+	return (1);
 }
 

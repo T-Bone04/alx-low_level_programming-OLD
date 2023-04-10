@@ -62,7 +62,7 @@ ssize_t print_buffer_to_stdout(char *buf, ssize_t size, ssize_t letters)
 	if (!buf)
 		return (0);
 
-	/* check if the requested number of letters is greater than the size of the buffer */
+	/* check if the requested num of letters is > the size of the buffer */
 	if (letters > size)
 		letters = size;
 
@@ -76,7 +76,7 @@ ssize_t print_buffer_to_stdout(char *buf, ssize_t size, ssize_t letters)
 	/* return the number of bytes written */
 	return (wr);
 }
-	
+
 /**
  * read_textfile - Reads a text file and prints it to the POSIX standard output
  *
@@ -96,7 +96,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	bytes_read = print_buffer_to_stdout(buffer, strlen(buffer), letters);
 	/* print buffer to standard output */
-	
+
 	free(buffer);
-	return bytes_read;
+	return (bytes_read);
 }

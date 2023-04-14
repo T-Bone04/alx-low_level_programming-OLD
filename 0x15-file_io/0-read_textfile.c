@@ -2,6 +2,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#ifndef HEADER_FILE_NAME_H
+#define HEADER_FILE_NAME_H
+
+#endif
+
 
 /**
  * read_file_into_buffer - Reads a file into a buffer
